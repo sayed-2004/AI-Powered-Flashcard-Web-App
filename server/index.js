@@ -1,6 +1,7 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/auth.js";
+import flashcardRoutes from "./routes/flashcards.js";
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 connectDB();
 
 app.use("/api/auth", authRoutes);
+app.use("/api/flashcards", flashcardRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");

@@ -4,7 +4,7 @@ import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// Create
+// CREATE a flashcard
 router.post("/", authMiddleware, async (req, res) => {
   const { question, answer } = req.body;
   const flashcard = new Flashcard({ question, answer, owner: req.user.id });
@@ -12,23 +12,19 @@ router.post("/", authMiddleware, async (req, res) => {
   res.json(flashcard);
 });
 
-// Read all
+// GET all flashcards for logged-in user
 router.get("/", authMiddleware, async (req, res) => {
   const cards = await Flashcard.find({ owner: req.user.id });
   res.json(cards);
 });
 
-// Update
+// UPDATE flashcard
 router.put("/:id", authMiddleware, async (req, res) => {
-  const updated = await Flashcard.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  );
+  const updated = await Flashcard.findByIdAndUpdate(req.params.id, req.body, { new: true });
   res.json(updated);
 });
 
-// Delete
+// DELETE flashcard
 router.delete("/:id", authMiddleware, async (req, res) => {
   await Flashcard.findByIdAndDelete(req.params.id);
   res.json({ message: "Deleted" });
