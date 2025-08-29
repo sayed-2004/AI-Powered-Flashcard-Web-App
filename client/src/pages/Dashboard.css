@@ -1,0 +1,162 @@
+.dashboard {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center; /* center text */
+}
+
+/* Center header horizontally */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Move the header contents into the middle */
+header h1 {
+  flex: 1;
+  text-align: center;
+}
+
+.logout-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: auto;
+}
+
+.logout-btn:hover {
+  background: #d32f2f;
+}
+
+/* Center add card form */
+.add-card {
+  margin: 20px auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.form {
+  display: flex;
+  justify-content: center; /* center inputs */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form input {
+  flex: 1;
+  max-width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.form button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #388e3c;
+}
+
+/* Center flashcards grid */
+.cards {
+  margin-top: 30px;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  width: 250px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: left;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #e68900;
+}
+
+.ai-section {
+  margin: 20px auto;
+  padding: 20px;
+  background: #e0f7fa;
+  border-radius: 8px;
+  max-width: 700px;
+  text-align: center;
+}
+
+.ai-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.ai-inputs input[type="file"] {
+  padding: 8px;
+}
+
+.ai-inputs textarea {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  text-align: left;
+}
+
+.ai-inputs button {
+  margin-top: 5px;
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ai-inputs button:hover {
+  background: #0277bd;
+}
