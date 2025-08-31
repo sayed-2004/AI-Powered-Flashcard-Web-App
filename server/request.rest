@@ -17,8 +17,8 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "test2@example.com",
-  "password": "test2111"
+  "email": "test5@example.com",
+  "password": "test000"
 }
 
 ### Create a flashcard
@@ -33,4 +33,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjA3MmM3N
 
 ### Get all flashcards
 GET http://localhost:5000/api/flashcards
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjA3MmM3NTQ1MjBiMGZkYzY4YzRiNyIsImlhdCI6MTc1NjM5NDE4NCwiZXhwIjoxNzU2Mzk3Nzg0fQ.VpmHgCrMlkV5kjgYSc9cD5wbwL7sjWaQmWqTAD5YMJg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjE4NjQxMDllZjY1YWNiYjU5ZmU1NCIsImlhdCI6MTc1NjY1ODY1NSwiZXhwIjoxNzU2NjYyMjU1fQ.Ppafe7WaqSX6YKEdHCDkoLvO4aB-s8ZXB78l8ayW3jc
+
+###
+
+POST http://localhost:5000/api/ai-flashcards
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjA3MmM3NTQ1MjBiMGZkYzY4YzRiNyIsImlhdCI6MTc1NjY1NzMzNCwiZXhwIjoxNzU2NjYwOTM0fQ.JKhjgZbI-e1fD7asui_yC3gNruhDfDLl7aL_kMGALZw
+Content-Type: application/json
+
+{
+  "text": "Artificial Intelligence is a branch of computer science that aims to create machines that can perform tasks that typically require human intelligence."
+}

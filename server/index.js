@@ -2,6 +2,7 @@ import express from "express";
 import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/auth.js";
 import flashcardRoutes from "./routes/flashcards.js";
+import aiFlashcardsRoutes from "./routes/aiFlashcards.js";
 import cors from "cors";
 
 const app = express();
@@ -13,6 +14,8 @@ app.use(cors());
 
 // Connect to MongoDB
 connectDB();
+
+app.use("/api/ai-flashcards", aiFlashcardsRoutes);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/flashcards", flashcardRoutes);

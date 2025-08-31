@@ -12,12 +12,9 @@ function Dashboard() {
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [notes, setNotes] = useState(""); // for AI text input
-  const [selectedFile, setSelectedFile] = useState<File | null>(null); // for AI file upload
 
   const token = localStorage.getItem("token");
 
-  // Fetch flashcards
   const fetchFlashcards = async () => {
     try {
       const res = await axios.get("http://localhost:5000/api/flashcards", {
@@ -33,7 +30,6 @@ function Dashboard() {
     fetchFlashcards();
   }, []);
 
-  // Manual add flashcard
   const handleAdd = async () => {
     if (!question || !answer) return alert("Please fill in both fields");
     try {
@@ -50,7 +46,6 @@ function Dashboard() {
     }
   };
 
-  // Delete flashcard
   const handleDelete = async (id: string) => {
     try {
       await axios.delete(`http://localhost:5000/api/flashcards/${id}`, {
@@ -62,51 +57,9 @@ function Dashboard() {
     }
   };
 
-  // Logout
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.href = "/login";
-  };
-
-  // AI: Handle file selection
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) setSelectedFile(e.target.files[0]);
-  };
-
-  // AI: Generate flashcards from file
-  const handleFileGenerate = async () => {
-    if (!selectedFile) return alert("Please select a file first!");
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-
-    try {
-      const res = await axios.post("http://localhost:5000/api/ai/upload", formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      setFlashcards([...flashcards, ...res.data]);
-      setSelectedFile(null);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  // AI: Generate flashcards from text notes
-  const handleTextSubmit = async () => {
-    if (!notes) return alert("Enter notes first!");
-    try {
-      const res = await axios.post(
-        "http://localhost:5000/api/ai/text",
-        { notes },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      setFlashcards([...flashcards, ...res.data]);
-      setNotes("");
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (
@@ -116,29 +69,6 @@ function Dashboard() {
         <button className="logout-btn" onClick={handleLogout}>Logout</button>
       </header>
 
-      {/* AI Flashcard Generation */}
-      <section className="ai-section">
-        <h2>Generate Flashcards with AI</h2>
-        <div className="ai-inputs">
-          {/* File Upload */}
-          <div>
-            <input type="file" onChange={handleFileChange} />
-            <button onClick={handleFileGenerate}>Generate from File</button>
-          </div>
-
-          {/* Notes Input */}
-          <div>
-            <textarea
-              placeholder="Or paste your notes here..."
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-            />
-            <button onClick={handleTextSubmit}>Generate from Notes</button>
-          </div>
-        </div>
-      </section>
-
-      {/* Manual Flashcard Form */}
       <section className="add-card">
         <h2>Add a New Flashcard</h2>
         <div className="form">
@@ -158,7 +88,6 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Flashcards Grid */}
       <section className="cards">
         <h2>Your Flashcards</h2>
         {flashcards.length === 0 ? (
