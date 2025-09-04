@@ -17,8 +17,8 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "test5@example.com",
-  "password": "test000"
+  "email": "test6@example.com",
+  "password": "test111"
 }
 
 ### Create a flashcard
@@ -33,7 +33,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjA3MmM3N
 
 ### Get all flashcards
 GET http://localhost:5000/api/flashcards
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjE4NjQxMDllZjY1YWNiYjU5ZmU1NCIsImlhdCI6MTc1NjY1ODY1NSwiZXhwIjoxNzU2NjYyMjU1fQ.Ppafe7WaqSX6YKEdHCDkoLvO4aB-s8ZXB78l8ayW3jc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjE4NjQxMDllZjY1YWNiYjU5ZmU1NCIsImlhdCI6MTc1NjkyMjAyMCwiZXhwIjoxNzU2OTI1NjIwfQ.M8Zw2vx6BR50Jghf5PZJqZ0lEUeqgARxutFVFdI8Mbw
 
 ###
 
