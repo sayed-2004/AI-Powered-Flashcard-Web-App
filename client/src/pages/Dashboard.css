@@ -115,3 +115,49 @@ header h1 {
 .card button:hover {
   background: #e68900;
 }
+
+/* AI Flashcard Generator */
+.ai-card {
+  margin: 20px auto;
+  padding: 20px;
+  background: #f4f4f4; /* same as add-card */
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ai-card h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.ai-card textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  resize: vertical;
+  text-align: left;
+}
+
+.ai-card input[type="file"] {
+  margin: 10px 0;
+}
+
+.ai-card button {
+  background: #4caf50; /* same green as add flashcard button */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ai-card button:hover {
+  background: #388e3c;
+}
