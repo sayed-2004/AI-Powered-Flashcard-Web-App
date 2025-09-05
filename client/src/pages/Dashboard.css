@@ -1,9 +1,18 @@
-.dashboard {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+/* Make the body full height and use flex to center everything */
+body {
+  margin-top: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
   font-family: Arial, sans-serif;
-  text-align: center; /* center text */
+}
+
+.dashboard {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Center header horizontally */
